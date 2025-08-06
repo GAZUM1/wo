@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم | شركة الصفا</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-100 font-['Cairo']">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-800 text-white p-6 hidden lg:flex flex-col">
+            <div class="flex items-center gap-3 mb-10">
+                <i class="fas fa-recycle text-green-500 text-3xl"></i>
+                <h1 class="text-2xl font-bold">شركة الصفا</h1>
+            </div>
+            <nav class="flex-grow">
+                <a href="#home" class="dashboard-link active">
+                    <i class="fas fa-home ml-3"></i> الرئيسية
+                </a>
+                <a href="#service-request" class="dashboard-link">
+                    <i class="fas fa-plus-circle ml-3"></i> طلب خدمة
+                </a>
+                <a href="#orders" class="dashboard-link">
+                    <i class="fas fa-tasks ml-3"></i> حالة الطلبات
+                </a>
+                <a href="#account" class="dashboard-link">
+                    <i class="fas fa-user-circle ml-3"></i> بيانات الحساب
+                </a>
+            </nav>
+            <div>
+                <a href="index.html" class="dashboard-link bg-red-500 hover:bg-red-600">
+                    <i class="fas fa-sign-out-alt ml-3"></i> تسجيل الخروج
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Top Bar -->
+            <header class="bg-white shadow-sm p-4 flex justify-between items-center">
+                <button id="menu-toggle" class="lg:hidden text-2xl text-gray-600">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 class="text-xl font-semibold text-gray-700">أهلاً بك، إسلام سلامه!</h2>
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-bell text-gray-500 text-xl cursor-pointer"></i>
+                    <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=IS" alt="User" class="w-10 h-10 rounded-full">
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="p-6 md:p-8">
+                <!-- Section: Home -->
+                <section id="home" class="dashboard-section">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="info-card bg-blue-500">
+                            <i class="fas fa-recycle text-4xl"></i>
+                            <div>
+                                <p class="text-lg">إجمالي الطلبات</p>
+                                <p class="text-3xl font-bold">15</p>
+                            </div>
+                        </div>
+                        <div class="info-card bg-green-500">
+                            <i class="fas fa-check-circle text-4xl"></i>
+                            <div>
+                                <p class="text-lg">طلبات مكتملة</p>
+                                <p class="text-3xl font-bold">12</p>
+                            </div>
+                        </div>
+                        <div class="info-card bg-yellow-500">
+                            <i class="fas fa-spinner text-4xl"></i>
+                            <div>
+                                <p class="text-lg">قيد المعالجة</p>
+                                <p class="text-3xl font-bold">3</p>
+                            </div>
+                        </div>
+                        <div class="info-card bg-purple-500">
+                            <i class="fas fa-wallet text-4xl"></i>
+                            <div>
+                                <p class="text-lg">الرصيد</p>
+                                <p class="text-3xl font-bold">250.00 ج.م</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Service Request -->
+                <section id="service-request" class="dashboard-section hidden">
+                    <div class="dashboard-card">
+                        <h3 class="card-title">طلب خدمة جديدة</h3>
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="clientName">اسم العميل</label>
+                                <input type="text" id="clientName" value="اسلام سلامه" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="wasteType">نوع المخلفات</label>
+                                <select id="wasteType">
+                                    <option>بلاستيك</option>
+                                    <option>ورق ومقوى</option>
+                                    <option>معادن</option>
+                                    <option>زجاج</option>
+                                    <option>مخلفات منزلية</option>
+                                    <option>مخلفات صناعية</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">الكمية (بالكيلوجرام)</label>
+                                <input type="number" id="quantity" placeholder="مثال: 50">
+                            </div>
+                            <div class="form-group">
+                                <label for="pickupDate">تاريخ الاستلام المقترح</label>
+                                <input type="date" id="pickupDate">
+                            </div>
+                            <div class="form-group md:col-span-2">
+                                <label for="address">العنوان بالتفصيل</label>
+                                <textarea id="address" rows="4" placeholder="اكتب العنوان هنا..."></textarea>
+                            </div>
+                            <div class="md:col-span-2 text-left">
+                                <button type="submit" class="form-button">إرسال الطلب</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Section: Orders -->
+                <section id="orders" class="dashboard-section hidden">
+                    <div class="dashboard-card">
+                        <h3 class="card-title">سجل الطلبات</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-right">
+                                <thead>
+                                    <tr class="border-b">
+                                        <th class="p-4">رقم الطلب</th>
+                                        <th class="p-4">الخدمة</th>
+                                        <th class="p-4">الحالة</th>
+                                        <th class="p-4">التاريخ</th>
+                                        <th class="p-4">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-4">#1025</td>
+                                        <td class="p-4">مخلفات بلاستيكية</td>
+                                        <td class="p-4"><span class="status-badge bg-yellow-100 text-yellow-800">جارٍ المعالجة</span></td>
+                                        <td class="p-4">2025-08-07</td>
+                                        <td class="p-4"><button class="text-blue-500 hover:underline">تفاصيل</button></td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="p-4">#1024</td>
+                                        <td class="p-4">ورق ومقوى</td>
+                                        <td class="p-4"><span class="status-badge bg-green-100 text-green-800">تم التنفيذ</span></td>
+                                        <td class="p-4">2025-08-03</td>
+                                        <td class="p-4"><button class="text-blue-500 hover:underline">تفاصيل</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="p-4">#1022</td>
+                                        <td class="p-4">مخلفات منزلية</td>
+                                        <td class="p-4"><span class="status-badge bg-red-100 text-red-800">ملغي</span></td>
+                                        <td class="p-4">2025-07-28</td>
+                                        <td class="p-4"><button class="text-blue-500 hover:underline">تفاصيل</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Account -->
+                <section id="account" class="dashboard-section hidden">
+                    <div class="dashboard-card">
+                        <h3 class="card-title">بيانات الحساب</h3>
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="fullName">الاسم بالكامل</label>
+                                <input type="text" id="fullName" value="اسلام سلامه">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" value="eslam@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" value="01094042236">
+                            </div>
+                            <div class="form-group">
+                                <label for="password_change">تغيير كلمة المرور</label>
+                                <input type="password" id="password_change" placeholder="اتركها فارغة لعدم التغيير">
+                            </div>
+                            <div class="md:col-span-2 text-left">
+                                <button type="submit" class="form-button">حفظ التعديلات</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.dashboard-link');
+            const sections = document.querySelectorAll('.dashboard-section');
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.querySelector('aside');
+
+            // Function to handle navigation
+            function showSection(targetId) {
+                sections.forEach(section => {
+                    if ('#' + section.id === targetId) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+
+                links.forEach(link => {
+                    if (link.getAttribute('href') === targetId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            // Click event for sidebar links
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Prevent default for internal links
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        showSection(targetId);
+                        // Hide sidebar on mobile after click
+                        if (window.innerWidth < 1024) {
+                           sidebar.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('hidden');
+            });
+            
+            // Show the home section by default
+            showSection('#home');
+        });
+    </script>
+</body>
+</html>
