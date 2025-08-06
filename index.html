@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>شركة الصفا لإدارة المخلفات</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <!-- داخل <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dU9Jr8iNmQGhN6Dx50e+V7y+oQskNm/UMwC3Fs+8ipqZfZn2MB7mYLOjvEGF5KhS4nUZ/krdjW0cYZ7G0e3K9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-dU9Jr8iNmQGhN6Dx50e+V7y+oQskNm/UMwC3Fs+8ipqZfZn2MB7mYLOjvEGF5KhS4nUZ/krdjW0cYZ7G0e3K9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> <!-- استبدل yourkitid -->
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f8fafc;
+    }
+    .logo-animate {
+      animation: blinkText 3s infinite;
+    }
+    @keyframes blinkText {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid #22c55e;
+      white-space: nowrap;
+      animation: typing 4s steps(30, end) infinite, blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+      0%, 100% { width: 0 }
+      50% { width: 100% }
+    }
+    @keyframes blink-caret {
+      0%, 100% { border-color: transparent }
+      50% { border-color: #22c55e; }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center bg-green-600 p-4 text-white">
+    <div class="text-2xl font-bold logo-animate">شركة الصفا</div>
+    <ul class="flex gap-4">
+      <li><a href="#home" class="hover:text-gray-200">الرئيسية</a></li>
+      <li><a href="#about" class="hover:text-gray-200">من نحن</a></li>
+      <li><a href="#services" class="hover:text-gray-200">الخدمات</a></li>
+      <li><a href="#contact" class="hover:text-gray-200">تواصل معنا</a></li>
+      <li><a href="#login" class="hover:text-gray-200">تسجيل الدخول</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="text-center py-20 bg-green-100">
+    <h1 class="text-4xl font-bold typewriter text-green-700">مرحباً بكم في شركة الصفا لإدارة المخلفات</h1>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 md:px-20">
+    <center>
+    <h2 class="text-3xl font-bold text-green-700 mb-6">من نحن</h2>
+    <p class="text-lg leading-loose">نحن شركة رائدة في مجال إدارة المخلفات ونقلها وإعادة تدويرها بشكل آمن وفعال. نعمل مع المصانع والشركات والمنازل لنقدم حلولاً مبتكرة وصديقة للبيئة.</p></center>
+  </section>
+
+ <section id="services" class="py-16 px-4 md:px-20 bg-gray-50">
+  <h2 class="text-3xl font-bold text-green-700 mb-10 text-center">خدماتنا</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- كرت إعادة التدوير -->
+    <div class="p-6 bg-white shadow-md rounded-xl text-center">
+      <div class="text-green-600 text-5xl mb-4"><i class="fas fa-recycle"></i></div>
+      <h3 class="text-xl font-bold mb-2">إعادة التدوير</h3>
+      <p>نقوم بجمع وفرز المواد القابلة لإعادة التدوير وتحويلها إلى منتجات قابلة للاستخدام.</p>
+    </div>
+
+    <!-- كرت نقل المخلفات -->
+    <div class="p-6 bg-white shadow-md rounded-xl text-center">
+      <div class="text-green-600 text-5xl mb-4"><i class="fas fa-truck"></i></div>
+      <h3 class="text-xl font-bold mb-2">نقل المخلفات</h3>
+      <p>نقدم خدمات نقل المخلفات من المنشآت التجارية والسكنية إلى مواقع المعالجة المعتمدة.</p>
+    </div>
+
+    <!-- كرت حلول المصانع -->
+    <div class="p-6 bg-white shadow-md rounded-xl text-center">
+      <div class="text-green-600 text-5xl mb-4"><i class="fas fa-industry"></i></div>
+      <h3 class="text-xl font-bold mb-2">حلول للمصانع</h3>
+      <p>نساعد المصانع على التخلص من النفايات الصناعية بطرق آمنة تحترم البيئة والقانون.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Login Section -->
+  <section id="login" class="py-16 px-4 md:px-20 bg-gray-100">
+    <h2 class="text-3xl font-bold text-green-700 mb-6">تسجيل الدخول</h2>
+    <form onsubmit="return validateLogin(event)" class="max-w-md mx-auto bg-white p-6 rounded shadow-md">
+      <input id="username" type="text" placeholder="اسم المستخدم" class="w-full p-3 mb-4 border rounded" required>
+      <input id="password" type="password" placeholder="كلمة المرور" class="w-full p-3 mb-4 border rounded" required>
+      <p id="error-msg" class="text-red-500 text-sm mb-4 hidden">اسم المستخدم أو كلمة المرور غير صحيحة</p>
+      <button type="submit" class="bg-green-600 text-white w-full py-2 rounded hover:bg-green-700 transition">دخول</button>
+    </form>
+  </section>
+
+  <script>
+    ScrollReveal().reveal('section', {
+      duration: 1000,
+      origin: 'bottom',
+      distance: '50px',
+      reset: true
+    });
+
+    function validateLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
+
+      if (username === "admin" && password === "admin123") {
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.classList.remove("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
